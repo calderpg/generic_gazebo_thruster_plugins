@@ -167,8 +167,6 @@ namespace gazebo
       {
         throw std::invalid_argument("No thruster_body parameter provided");
       }
-
-
       if (sdf_ptr->HasElement("body_torque_axis"))
       {
         ignition::math::Vector3d torque_axis =

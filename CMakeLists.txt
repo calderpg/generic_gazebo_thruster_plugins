@@ -69,9 +69,18 @@ target_link_libraries(generic_gazebo_torque_thruster_plugin
 add_dependencies(generic_gazebo_torque_thruster_plugin
                  ${catkin_EXPORTED_TARGETS})
 
+add_library(generic_gazebo_wrench_thruster_plugin
+            src/${PROJECT_NAME}/generic_gazebo_wrench_thruster_plugin.cpp)
+target_link_libraries(generic_gazebo_wrench_thruster_plugin
+                      ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES}
+                      ${Boost_LIBRARIES})
+add_dependencies(generic_gazebo_wrench_thruster_plugin
+                 ${catkin_EXPORTED_TARGETS})
+
 ## Mark library for installation
 install(TARGETS generic_gazebo_force_thruster_plugin
                 generic_gazebo_torque_thruster_plugin
+                generic_gazebo_wrench_thruster_plugin
     ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
     LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
     RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
