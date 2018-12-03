@@ -27,6 +27,7 @@ endif()
 catkin_package(LIBRARIES
                generic_gazebo_force_thruster_plugin
                generic_gazebo_torque_thruster_plugin
+               generic_gazebo_wrench_thruster_plugin
                CATKIN_DEPENDS
                roscpp
                std_msgs
