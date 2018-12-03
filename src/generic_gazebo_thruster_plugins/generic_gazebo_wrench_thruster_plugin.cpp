@@ -140,7 +140,7 @@ namespace gazebo
       ros::SubscribeOptions subscribe_options =
           ros::SubscribeOptions::create<geometry_msgs::WrenchStamped>(
               model_ptr_->GetName() + "/" + thruster_name_
-              + "/thrust/command", 1,
+              + "/command", 1,
               boost::bind(
                   &GenericGazeboWrenchThrusterPlugin::CommandMessageCallback,
                   this, _1),
@@ -148,7 +148,7 @@ namespace gazebo
       ros_thrust_command_sub_ = ros_node_ptr_->subscribe(subscribe_options);
       ros_thrust_status_pub_ =
           ros_node_ptr_->advertise<geometry_msgs::WrenchStamped>(
-              model_ptr_->GetName() + "/" + thruster_name_ + "/thrust/status",
+              model_ptr_->GetName() + "/" + thruster_name_ + "/status",
               1, true);
       // Spin up the queue helper thread.
       ros_callback_thread_ =
