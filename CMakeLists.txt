@@ -43,7 +43,7 @@ include_directories(SYSTEM ${catkin_INCLUDE_DIRS}
 link_directories(${Boost_LIBRARY_DIRS} ${GAZEBO_LIBRARY_DIRS})
 
 ## Build options
-add_compile_options(-std=c++11)
+add_compile_options(-std=c++17)
 add_compile_options(-Wall)
 add_compile_options(-Wextra)
 add_compile_options(-Werror)
